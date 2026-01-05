@@ -46,6 +46,12 @@
       --glass-shine: rgba(255, 255, 255, 0.6);
     }
 
+    /* 程式版變數覆蓋：讓全域游標變色 */
+    [data-mode="code"] {
+        --accent-color: var(--code-green);
+        --bg-color: var(--code-bg);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
@@ -249,7 +255,7 @@
       position: relative;
       z-index: 2;
       animation: avatarFloat 6s ease-in-out infinite;
-      overflow: hidden; /* 防止圖片溢出圓形 */
+      overflow: hidden;
     }
 
     .avatar-visual img {
@@ -638,27 +644,17 @@
     }
     .full-width-stack .img-wrap { aspect-ratio: 16 / 9; }
 
-    .cta-wrap {
-      text-align: center;
-      margin-top: 6rem;
-    }
-    .cta-title {
-      font-family: "Orbitron";
-      margin-bottom: 2rem;
-      color: var(--text-main);
-      font-size: 2rem;
-      font-weight: 700;
-    }
     .cta-btn {
       width: auto;
       height: auto;
-      padding: 18px 45px;
-      border-radius: 10px;
+      padding: 10px 30px;
+      border-radius: 8px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       font-size: 1rem;
+      margin-top: 20px;
     }
 
     .footer-visual {
@@ -865,6 +861,9 @@
 </head>
 
 <body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-outline" aria-hidden="true"></div>
+
   <div class="control-panel" role="toolbar" aria-label="頁面控制">
     <button class="control-btn" id="themeBtn" title="切換日夜模式" aria-label="切換日夜模式">
       <i class="fa-solid fa-sun"></i>
@@ -878,9 +877,6 @@
     <div class="scan-lines" aria-hidden="true"></div>
     <div class="bg-glow" aria-hidden="true"></div>
     <canvas id="particlesCanvas" aria-hidden="true"></canvas>
-
-    <div class="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor-outline" aria-hidden="true"></div>
 
     <main class="container-visual">
       <header class="hero">
@@ -945,6 +941,15 @@
             </div>
             <div class="book-label">序曲：北車地下城守則</div>
           </a>
+        </div>
+
+        <div style="margin-top: 40px; padding-top: 30px; border-top: 1px dashed var(--glass-border); text-align: center;">
+            <h3 style="font-family: 'Orbitron'; font-size: 1.2rem; color: var(--text-main); margin-bottom: 15px;">
+                🧪 創作者屬性鑑定 (心理測驗)
+            </h3>
+            <a href="https://arya601.github.io/College_Psychological_Test/" target="_blank" rel="noopener noreferrer" class="control-btn cta-btn" style="font-size: 1rem;">
+                開始測驗 <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </a>
         </div>
       </section>
 
@@ -1028,13 +1033,6 @@
         </div>
       </section>
 
-      <section class="cta-wrap">
-        <h3 class="cta-title">🔮 創作者屬性鑑定</h3>
-        <a href="https://arya601.github.io/College_Psychological_Test/" target="_blank" rel="noopener noreferrer" class="control-btn cta-btn">
-          開始鑑定儀式 <i class="fa-solid fa-wand-magic-sparkles"></i>
-        </a>
-      </section>
-
       <footer class="footer-visual">
         VISUAL TERMINAL // ONLINE<br />
         &copy; 2025 Tealize. All rights reserved.
@@ -1057,13 +1055,13 @@
           &nbsp;&nbsp;<span class="kwd">def</span> <span class="func">__init__</span>(self):<br />
           &nbsp;&nbsp;&nbsp;&nbsp;self.status = <span class="str">"被創作拖著走"</span><br />
           &nbsp;&nbsp;&nbsp;&nbsp;self.skills = [<span class="str">"Python"</span>, <span class="str">"Writing"</span>, <span class="str">"GameDev"</span>]<br />
-          &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># 文字是代碼，傳說是函式，一起來 Run 這個世界。</span>
+          &nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># 文字是code，傳說是function，一起來 Run 這個世界。</span>
         </div>
       </header>
 
       <div class="code-content" style="opacity: 0; transition: opacity 1s var(--ease-smooth) 0.5s;">
         <div class="code-project">
-          <h2 class="code-h2">>> Projects / Word_Life_Awakening</h2>
+          <h2 class="code-h2">>> Projects / Story-Command</h2>
           <div class="code-block-styled">
             <span class="kwd">def</span> <span class="func">cast_magic</span>(text):<br />
             &nbsp;&nbsp;<span class="kwd">if</span> meme <span class="kwd">in</span> text:<br />
