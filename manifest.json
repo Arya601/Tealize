@@ -1,7 +1,7 @@
 {
-  "name": "兌現藍 Tealize - 奇幻創作星球",
+  "name": "兌現藍 Tealize - 奇想基地",
   "short_name": "Tealize",
-  "description": "探索兌現藍的奇幻星球：歡迎前往小說《字命覺醒》系列、《是誰把穿越者種在土裡》與遊戲團隊的恐怖RPG《反轉的真實》",
+  "description": "探索兌現藍的奇想基地：歡迎前往小說《字命覺醒》系列、《是誰把穿越者種在土裡》與遊戲團隊的恐怖RPG《反轉的真實》",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#030507",
